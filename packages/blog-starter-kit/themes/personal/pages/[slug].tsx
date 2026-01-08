@@ -8,7 +8,6 @@ import { loadIframeResizer } from '@starter-kit/utils/renderer/services/embed';
 import request from 'graphql-request';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Container } from '../components/container';
 import { AppProvider } from '../components/contexts/appContext';
@@ -18,6 +17,7 @@ import { Footer } from '../components/footer';
 import { Layout } from '../components/layout';
 import { MarkdownToHtml } from '../components/markdown-to-html';
 import { PersonalHeader } from '../components/personal-theme-header';
+import { Tag } from '../components/tag';
 import {
 	PageByPublicationDocument,
 	PostFullFragment,
@@ -51,12 +51,7 @@ const Post = ({ publication, post }: PostProps) => {
 	useEmbeds({ enabled: canLoadEmbeds });
 	const tagsList = (post.tags ?? []).map((tag) => (
 		<li key={tag.id}>
-			<Link
-				href={`/tag/${tag.slug}`}
-				className="block rounded-full border px-2 py-1 font-medium hover:bg-slate-50 dark:border-neutral-800 dark:hover:bg-neutral-800 md:px-4"
-			>
-				#{tag.slug}
-			</Link>
+			<Tag slug={tag.slug} />
 		</li>
 	));
 
@@ -128,10 +123,10 @@ const Post = ({ publication, post }: PostProps) => {
 				/>
 				<style dangerouslySetInnerHTML={{ __html: highlightJsMonokaiTheme }}></style>
 			</Head>
-			<h1 className="text-4xl font-bold leading-tight tracking-tight text-black dark:text-white">
+			<h1 className="text-4xl font-bold leading-tight tracking-tight text-heading">
 				{post.title}
 			</h1>
-			<div className="flex tracking-tight gap-2 text-neutral-600 dark:text-neutral-400">
+			<div className="flex tracking-tight gap-2 text-muted">
 				<DateFormatter dateString={post.publishedAt} />
 				{'•'}
 				<span>{post.readTimeInMinutes} min read</span>
@@ -142,11 +137,11 @@ const Post = ({ publication, post }: PostProps) => {
 				</div>
 			)}
 			<MarkdownToHtml contentMarkdown={post.content.markdown} />
-			{(post.tags ?? []).length > 0 && (
-				<div className="mx-auto w-full text-slate-600 dark:text-neutral-300 md:max-w-screen-md">
-					<ul className="flex flex-row flex-wrap items-center gap-2">{tagsList}</ul>
-				</div>
-			)}
+		{(post.tags ?? []).length > 0 && (
+			<div className="mx-auto w-full text-muted md:max-w-screen-md">
+				<ul className="flex flex-row flex-wrap items-center gap-2">{tagsList}</ul>
+			</div>
+		)}
 		</>
 	);
 };

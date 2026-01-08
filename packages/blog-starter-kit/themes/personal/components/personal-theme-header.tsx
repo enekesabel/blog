@@ -19,7 +19,7 @@ export const PersonalHeader = () => {
 	const hiddenItems = navbarItems.slice(2);
 
 	const navList = (
-		<ul className="flex list-none flex-row items-center gap-4 text-xs font-semibold uppercase tracking-tight text-neutral-600 dark:text-neutral-300">
+		<ul className="flex list-none flex-row items-center gap-4 text-xs font-medium uppercase tracking-normal text-muted">
 			{visibleItems.map((item) => (
 				<li key={item.url}>
 					<a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
@@ -36,7 +36,7 @@ export const PersonalHeader = () => {
 						</DropdownMenu.Trigger>
 						<DropdownMenu.Portal>
 							<DropdownMenu.Content
-								className="flex flex-col items-stretch gap-1 rounded-lg border bg-white text-xs font-semibold uppercase tracking-tight text-neutral-600 shadow-xl dark:border-neutral-800 dark:bg-neutral-900  dark:text-neutral-300"
+								className="flex flex-col items-stretch gap-1 rounded-lg border bg-white text-xs font-medium uppercase tracking-normal text-muted shadow-xl dark:border-neutral-800 dark:bg-neutral-900"
 								sideOffset={5}
 								align="end"
 							>
@@ -66,7 +66,7 @@ export const PersonalHeader = () => {
 				<div className="flex justify-between">
 					<h1>
 						<Link
-							className="flex flex-row items-center gap-2 text-lg font-bold leading-tight tracking-tight text-black dark:text-white"
+							className="flex flex-row items-center gap-2 text-lg font-medium leading-normal tracking-normal text-heading"
 							href="/"
 							aria-label={`${publication.author.name}'s blog home page`}
 						>

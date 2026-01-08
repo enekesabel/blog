@@ -47,8 +47,8 @@ export default function Tag({ publication, posts, tag }: Props) {
 				<Container className="mx-auto flex max-w-3xl flex-col items-stretch gap-10 px-5 py-10">
 					<PersonalHeader />
 					<div className="flex flex-col gap-1 pt-5">
-						<p className="font-bold uppercase text-slate-500 dark:text-neutral-400">Tag</p>
-						<h1 className="text-4xl font-bold text-slate-900 dark:text-neutral-50">#{tag}</h1>
+						<p className="font-bold uppercase text-muted">Tag</p>
+						<h1 className="text-4xl font-bold text-heading">#{tag}</h1>
 					</div>
 					{posts.length > 0 && <MinimalPosts context="home" posts={posts} />}
 					<Footer />
