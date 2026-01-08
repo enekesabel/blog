@@ -12,6 +12,7 @@ fragment Post on Post {
 	publishedAt
 	slug
 	brief
+	subtitle
 	comments(first: 0) {
 		totalDocuments
 	}
