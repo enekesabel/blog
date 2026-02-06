@@ -178,7 +178,12 @@ export default function PostOrPage(props: Props) {
 								<PostComments />
 							</>
 						)}
-						{props.type === 'page' && <Page {...props} />}
+							{props.type === 'page' && (
+								<>
+									<Page {...props} />
+									<NewsletterSignup />
+								</>
+							)}
 					</article>
 					<Footer />
 				</Container>
