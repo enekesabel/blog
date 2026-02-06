@@ -84,10 +84,10 @@ export const NewsletterSignup = () => {
 	return (
 		<section className="w-full rounded-2xl border bg-transparent p-6 text-center md:p-8">
 			<h2 className="text-xl font-semibold text-heading md:text-2xl">
-				Subscribe to {publication.isTeam ? 'our' : 'my'} newsletter
+				Subscribe to my newsletter
 			</h2>
 			<p className="mt-2 text-sm text-body md:text-base">
-				Read new posts from <span className="font-semibold">{publication.title}</span> in your inbox.
+			 Notes from my ongoing battle with legacy codebases and myself, delivered to your inbox.
 			</p>
 
 			{!state.subscribed && (
@@ -110,7 +110,7 @@ export const NewsletterSignup = () => {
 
 			{state.subscribed && (
 				<p className="mt-4 text-sm text-green-600 dark:text-green-400">
-					We’ve sent a confirmation email. Please confirm to complete your subscription.
+					Confirmation email sent to your inbox. Please confirm to complete your subscription.
 				</p>
 			)}
 			{state.err && <p className="mt-3 text-sm text-red-600 dark:text-red-400">{state.err}</p>}
