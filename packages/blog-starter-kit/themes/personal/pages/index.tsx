@@ -10,6 +10,7 @@ import { AppProvider } from '../components/contexts/appContext';
 import { Footer } from '../components/footer';
 import { Layout } from '../components/layout';
 import { MinimalPosts } from '../components/minimal-posts';
+import { NewsletterSignup } from '../components/newsletter-signup';
 import { PersonalHeader } from '../components/personal-theme-header';
 import {
 	MorePostsByPublicationDocument,
@@ -95,6 +96,7 @@ export default function Index({ publication, initialPosts, initialPageInfo }: Pr
 						<Waypoint onEnter={loadMore} bottomOffset={'10%'} />
 					)}
 
+				  <NewsletterSignup />
 					<Footer />
 				</Container>
 			</Layout>

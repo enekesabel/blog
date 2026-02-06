@@ -22,11 +22,19 @@ fragment Publication on Publication {
 		darkMode {
 			logo
 		}
+		enabledPages {
+			newsletter
+		}
 		navbarItems {
 			id
 			type
 			label
 			url
+		}
+	}
+	features {
+		newsletter {
+			isEnabled
 		}
 	}
 	links {
