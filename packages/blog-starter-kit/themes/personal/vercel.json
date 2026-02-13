@@ -1,3 +1,15 @@
 {
-    "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/when-change-becomes-cheaper-than-commitment",
+      "destination": "https://www.abelenekes.com/p/when-change-becomes-cheaper-than-commitment",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://www.abelenekes.com/:path*",
+      "permanent": false
+    }
+  ]
 }
