@@ -6,5 +6,11 @@
       "destination": "https://www.abelenekes.com/p/when-change-becomes-cheaper-than-commitment",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.abelenekes.com/:path*"
+    }
   ]
 }
